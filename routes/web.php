@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/delete/{id}', 'QuotesController@delete');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::post('/create', 'QuotesController@create');
+

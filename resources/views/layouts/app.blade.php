@@ -59,6 +59,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    @if (Route::getCurrentRoute()->getPath() == "/")
+                                        <li><a href="{{url('/dashboard')}}">View Dashboard</a></li>
+                                    @else
+                                        <li><a href="{{url('/')}}">View Home</a></li>
+                                    @endif
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -79,6 +84,7 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
